@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "WicketSource context menu",
+  "version": "0.1",
+  "description": "Context menu for WicketSource",
+   "icons": {
+    "16": "favicon.ico"
+  },
+  "background": {
+    "scripts": ["contextMenu.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions":  [
+    "http://*/*", "https://*/*", "contextMenus"
+  ]
+}
