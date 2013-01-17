@@ -1,12 +1,8 @@
 (function() {
 
-  var wicketsource;
+  var wicketsource, menu;
 
-  chrome.extension.onRequest.addListener(function (request) {
-    wicketsource = request.wicketsource;
-  });
-
-  chrome.contextMenus.create({
+  menu = chrome.contextMenus.create({
     title: "Wicket Source",
     contexts: ["all"],
     onclick: function (info) {
@@ -16,7 +12,18 @@
         ajax.open("GET", url, true);
         ajax.send();
       }
+    },
+    enabled: false
+  });
+
+  chrome.extension.onRequest.addListener(function (request) {
+    if (request.hasOwnProperty('wicketsource')) {
+      wicketsource = request.wicketsource;
+      chrome.contextMenus.update(menu, {
+        enabled: wicketsource != null
+      });
     }
   });
+
 
 })();
