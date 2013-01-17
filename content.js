@@ -1,4 +1,4 @@
-document.addEventListener('mouseup', function (e) {
+document.addEventListener('contextmenu', function (e) {
   var ws = null;
   var el = e.target;
 
