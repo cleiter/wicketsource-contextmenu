@@ -4,7 +4,7 @@
   "version": "0.1",
   "description": "Context menu for WicketSource",
    "icons": {
-    "16": "favicon.ico"
+    "16": "wicket.png"
   },
   "background": {
     "scripts": ["contextMenu.js"]
