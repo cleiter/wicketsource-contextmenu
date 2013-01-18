@@ -6,6 +6,8 @@ This Chrome extension is an alternative to the default
 It provides a context menu to quickly open components in your IDE. If an element is selected which isn't a Wicket element
 then the component hierarchy will be searched for a Wicket element.
 
+![Screenshot](screenshot.png)
+
 ## Installation
 
 Follow the instructions from [WicketSource](https://github.com/42Lines/wicket-source/wiki) but don't install
