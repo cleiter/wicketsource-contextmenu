@@ -19,9 +19,22 @@
   chrome.extension.onRequest.addListener(function (request) {
     if (request.hasOwnProperty('wicketsource')) {
       wicketsource = request.wicketsource;
-      chrome.contextMenus.update(menu, {
-        enabled: wicketsource != null
-      });
+      if (wicketsource != null) {
+        var idx = wicketsource.indexOf(':');
+        if (idx > -1) {
+          wicketsource = wicketsource.substring(idx + 1);
+        }
+        wicketsource = wicketsource.replace(/\.java:/, ':');
+        chrome.contextMenus.update(menu, {
+          enabled: true,
+          title: "Wicket Source - " + wicketsource
+        });
+      } else {
+        chrome.contextMenus.update(menu, {
+          enabled: false,
+          title: "Wicket Source"
+        });
+      }
     }
   });
 
