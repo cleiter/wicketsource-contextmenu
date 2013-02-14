@@ -1,4 +1,4 @@
-document.addEventListener('contextmenu', function (e) {
+document.addEventListener('mousedown', function (e) {
   var ws = null;
   var el = e.target;
 
